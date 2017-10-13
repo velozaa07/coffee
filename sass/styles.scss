@@ -1,0 +1,104 @@
+@import "compass";
+@import "partials/variables";
+@import "partials/normalize";
+@import "partials/mixins";
+@import "partials/base";
+@import "compass/css3";
+
+
+
+div#main-box{
+  width:1000px;
+  height:500px;
+  margin:0 auto;
+  position: relative;
+  top: 50px;
+  background-color: lightgray;
+
+
+  div#sub-box-a{
+    width:15%;
+    height:35%;
+    background-color: lighten(red, 30%);
+    position: absolute;
+    top:0;
+    left:0;
+  }
+
+
+  div#sub-box-b{
+    width:15%;
+    height:35%;
+    background-color: lighten(blue, 30%);
+    position: absolute;
+    top:35%;
+    left:0;
+  }
+
+  div#sub-box-c{
+    width:50%;
+    height:70%;
+    background-color: lighten(green, 60%);
+    position: absolute;
+    top:0;
+    left:15%;
+  }
+
+
+  div#sub-box-d{
+    width:50%;
+    height:30%;
+    background-color: lighten(yellow, 30%);
+    position: absolute;
+    top:70%;
+    left:0;
+  }
+
+  div#sub-box-e{
+    width:15%;
+    height:30%;
+    background-color: lighten(turquoise, 20%);
+    position: absolute;
+    top:70%;
+    left:50%;
+  }
+
+
+  div#sub-box-f{
+    width:35%;
+    height:34%;
+    background-color: lighten(orange, 30%);
+    position: absolute;
+    top:0;
+    left:65%;
+  }
+
+
+  div#sub-box-g{
+    width:17%;
+    height:66%;
+    background-color: lighten(purple, 50%);
+    position: absolute;
+    top:34%;
+    left:65%;
+  }
+
+  div#sub-box-h{
+    width:18%;
+    height:33%;
+    background-color: lighten(black, 40%);
+    position: absolute;
+    top:34%;
+    left:82%;
+  }
+
+  div#sub-box-i{
+    width:18%;
+    height:33%;
+    background-color: lighten(red, 30%);
+    position: absolute;
+    top:67%;
+    left:82%;
+  }
+
+}
