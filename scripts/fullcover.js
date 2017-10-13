@@ -1,4 +1,4 @@
-
+// full cover
 
 // block constructor
 function Block(idName, elementId){
