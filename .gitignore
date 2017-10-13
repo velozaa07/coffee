@@ -3,3 +3,4 @@ config.rb
 /.sass-cache
 /stylesheets/ie.css
 /stylesheets/print.css
+/stylesheets/screen.css
