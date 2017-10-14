@@ -3,6 +3,7 @@
 // block constructor
 function Block(idName, elementId){
   this.idn = idName;
+
   this.elem = document.getElementById(elementId);
 
   this.getCoord = function(){
@@ -114,49 +115,81 @@ function tandemBlocks(fBlock, sBlock, vertical, displacement){
 
 
 
-function animateHide(fBlock, sBlock, tBlock){
+// action will be a mapping from a time increment (in ms) to pixel increment
 
-  let increment = 4;
-  let totalDisplacement = sBlock.getDimen().h;
-  let totalDisplacement1 = tBlock.getDimen().w;
+// sample derivative function below
+// time is in units of 10 milliseconds
+function constant(incrNum){
+  let delPixel = 4;
+  return delPixel;
+}
+
+function eAndHAdjacent(eBlock, hBlock, vertical, rate, timeIncrement){
+
+  let pixelsLeft = vertical? hBlock.getDimen().h : hBlock.getDimen().w;
+  let positiveBlock = vertical?(eBlock.getCoord().y < hBlock.getCoord().y? eBlock : hBlock):(eBlock.getCoord().x > hBlock.getCoord().x? eBlock : hBlock); // block up or to the right
+  let negativeBlock = (positiveBlock === hBlock)? eBlock : hBlock; // block below or to the left
+  let numTimeIncr = 0;
+  let sign = (positiveBlock === hBlock)? 1 : -1;
 
   let timer = setInterval(function(){
-    if(totalDisplacement >= 0){
-      tandemBlocks(fBlock, sBlock, true, -increment);
-      totalDisplacement -= increment;
-    } else if(totalDisplacement1 >= 0){
-
-      tandemBlocks(tBlock, fBlock, false, increment);
-      totalDisplacement1 -= increment;
-
+    if(pixelsLeft >= rate(numTimeIncr)){
+      tandemBlocks(positiveBlock, negativeBlock, vertical, sign*rate(numTimeIncr));
+      numTimeIncr++;
+      pixelsLeft -= rate(numTimeIncr);
     } else {
+      tandemBlocks(positiveBlock, negativeBlock, vertical, sign*pixelsLeft);
       clearInterval(timer);
     }
-  }, 10);
+  }, timeIncrement);
 
 }
 
-function animateHide1(fBlock, sBlock){
+let labels = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
 
-  let increment = 1;
-  let totalDisplacement = sBlock.getDimen().w;
-
-
-  let timer = setInterval(function(){
-    if(totalDisplacement > 0){
-      tandemBlocks(fBlock, sBlock, false, -increment);
-      totalDisplacement -= increment;
-    } else {
-      clearInterval(timer);
-    }
-  }, 10);
-
+function Blocks(labelArray){
+  for(let i = 0; i < labels.length; ++i){
+    this[labelArray[i]] = new Block(labelArray[i], "sub-box-" + labelArray[i]);
+  }
 }
-let firstBlock = new Block("a", "sub-box-a");
-let secondBlock = new Block("b", "sub-box-b");
-let thirdBlock = new Block("c", "sub-box-c");
-let fourthBlock = new Block("d", "sub-box-d");
-let fifthBlock = new Block("e", "sub-box-e");
 
-animateHide(firstBlock, secondBlock, thirdBlock);
-animateHide1(fifthBlock, fourthBlock);
+let blocks = new Blocks(labels);
+let timeIt = 4;
+
+blocks.c.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.b, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.h, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.a, false, constant, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.d, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.f, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.g, false, constant, 4);
+  }, 1400);
+});
