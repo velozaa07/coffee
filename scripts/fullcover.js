@@ -124,6 +124,10 @@ function constant(incrNum){
   return delPixel;
 }
 
+function constant1(incrNum){
+  let delPixel = 3;
+  return delPixel;
+}
 function eAndHAdjacent(eBlock, hBlock, vertical, rate, timeIncrement){
 
   let pixelsLeft = vertical? hBlock.getDimen().h : hBlock.getDimen().w;
@@ -192,4 +196,44 @@ blocks.c.elem.addEventListener("click", function(){
   setTimeout(function(){
     eAndHAdjacent(blocks.c, blocks.g, false, constant, 4);
   }, 1400);
+});
+
+
+blocks.a.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.b, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.g, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.c, false, constant1, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.h, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.d, true, constant, timeIt);
+  }, 1600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.f, false, constant, timeIt);
+  }, 1900);
+
 });
