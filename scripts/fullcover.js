@@ -237,3 +237,299 @@ blocks.a.elem.addEventListener("click", function(){
   }, 1900);
 
 });
+
+
+
+blocks.b.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.a, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.g, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.c, false, constant1, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.h, true, constant, timeIt);
+  }, 1000);
+
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.d, true, constant, timeIt);
+  }, 1600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.f, false, constant, timeIt);
+  }, 1900);
+
+});
+
+
+// block d
+
+blocks.d.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.b, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.h, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){///////
+    eAndHAdjacent(blocks.c, blocks.a, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.g, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.c, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.f, false, constant, timeIt);
+  }, 1650);
+
+});
+
+
+// block e
+blocks.e.elem.addEventListener("click", function(){
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.a, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.e, blocks.d, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.i, blocks.h, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.i, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.c, false, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.g, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.e, blocks.b, true, constant, timeIt);
+  }, 1700);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.e, blocks.f, false, constant, timeIt);
+  }, 2300);
+
+});
+
+// block f
+
+blocks.f.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.b, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.h, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.a, false, constant, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.g, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.c, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.f, blocks.d, false, constant, timeIt);
+  }, 1650);
+
+});
+
+// block g
+
+blocks.g.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.a, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.h, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.b, false, constant, timeIt);
+  }, 600);
+
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.f, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.d, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.g, blocks.c, false, constant, timeIt);
+  }, 1400);
+
+});
+
+
+// block h
+
+blocks.h.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.a, blocks.b, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.i, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.g, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.a, false, constant, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.f, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.d, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.h, blocks.c, false, constant, timeIt);
+  }, 1500);
+
+});
+
+// block i
+blocks.i.elem.addEventListener("click", function(){
+  setTimeout(function(){
+    eAndHAdjacent(blocks.b, blocks.a, true, constant, timeIt);
+  }, 200);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.d, blocks.e, false, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.i, blocks.h, true, constant, timeIt);
+  }, 200);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.i, blocks.g, false, constant, timeIt);
+  }, 600);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.b, false, constant, timeIt);
+  }, 600);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.i, blocks.f, true, constant, timeIt);
+  }, 1000);
+
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.c, blocks.d, true, constant, timeIt);
+  }, 1000);
+
+  setTimeout(function(){
+    eAndHAdjacent(blocks.i, blocks.c, false, constant, timeIt);
+  }, 1500);
+
+});
+;
